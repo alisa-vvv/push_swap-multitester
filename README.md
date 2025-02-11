@@ -63,5 +63,7 @@ Once it's finished, you will see the results:
 ```
 
 If any tests KO'd or were over the operation threshold you set, the input used for those tests will be saved in /KO_tests or /falied_tests respectively, so you can use them for your input.\
+\
 The folders in failed_tests are named after the amount of operations your push_swap used to sort the list. Inside each folder, there are text files containing the corresponding input. Different inputs can result in the same amount of operations, so the files are named after the number of the test case that failed it.\
-The folders in KO_tests are named after the number of test case that failed it. Each folder will contain the corresponding input.txt file.\
+\
+The folders in KO_tests are named after the number of test case that failed it. Each folder will contain the corresponding input.txt file.
