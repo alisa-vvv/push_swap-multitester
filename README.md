@@ -16,7 +16,7 @@ You can specify the parameters and flags immideately, without going through prom
 
 ```
 	./multitest.sh -[flags] [min_range-max_range] [amount_of_elemnts] [test_count] [threshold]
-	eg:
+eg:
 	./multitest.sh -c 1-100 100 250 700
 ```
 
