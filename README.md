@@ -19,12 +19,12 @@ How to use:
 The script will then run your tests. Depending on the amount of tests and how your project is designed, this may take a while. The script will not show anything until it's finished.
 Once it's finished, you will see the results:
 
-Total tests run: 100
-Over the threshold: 28 cases
-KO'd: 0 cases
-Average operations used: 5384
-Max operations used: 5784
-Min operations used: 4913
+	Total tests run: 100
+	Over the threshold: 28 cases
+	KO'd: 0 cases
+	Average operations used: 5384
+	Max operations used: 5784
+	Min operations used: 4913
 
 If any tests KO'd or were over the operation threshold you set, the input used for those tests will be saved in /KO_tests or /falied_tests respectively, so you can use them for your input.
 The folders in failed_tests are named after the amount of operations your push_swap used to sort the list. Inside each folder, there are text files containing the corresponding input. Different inputs can result in the same amount of operations, so the files are named after the number of the test case that failed it.

@@ -57,8 +57,8 @@ do
 	cat ops | ${ps_path}/checker_linux `cat input.txt` > OK_KO
 	if [ "`cat OK_KO`" = "KO" ]
 	then
-		mkdir -p mkdir -p KO_tests/$(i)
-		cp OK_KO KO_tests/$(i)
+		mkdir -p mkdir -p KO_tests/${i}
+		cp input.txt KO_tests/${i}/
 		true $((ko=ko+1))
 	fi
 	true $((i=i+1))
