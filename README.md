@@ -43,13 +43,13 @@ The path you enter has to be relative to your home, for example, if your push_sw
 
    The script will create a file called ps_path.txt in in it's directory. You can edit the file directly if you want to change the path, or just create the file yourself.
 
-4. You will be prompted to enter the range of values: 
+4. You will be prompted to enter the range of values that can be generated: 
 ```
     Enter the range (only pos. vals) (format. XX-XX):
 ```
    The range has to be positive. Example range: 1-100. Note that the script will never generate duplicate values.
 
-5. You will be prompted to enter the amount of elements:
+5. You will be prompted to enter the amount of elements to generate:
 
 ```
     Enter amount of elements:
@@ -61,7 +61,7 @@ The path you enter has to be relative to your home, for example, if your push_sw
     Enter tests count:
 ```
 
-7. Lastly, you will be prompted to enter the fail threshold. You can find those in the project pdf and the evaluation sheet.
+7. Lastly, you will be prompted to enter the fail threshold. You can find those in the project pdf and the evaluation sheet. If your push_swap uses more than [threshold] operations to sort the inputted variables, the test is considered failed.
 
 ```
     Enter fail threshold:
