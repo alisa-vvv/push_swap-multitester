@@ -17,7 +17,7 @@ You can specify the parameters and flags immideately. Later steps will explain i
 If you don't enter any parameters, you will be prompted by the script to enter them one-by-one.
 
 ```
-	./multitest.sh -[flags] [min_range-max_range] [amount_of_elemnts] [test_count] [fail_threshold]
+	./multitest.sh -[flags] [min_val-max_val] [amount_of_elemnts] [test_count] [fail_threshold]
 eg:
 	./multitest.sh -c 1-100 100 250 700
 ```
