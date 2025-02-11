@@ -1,3 +1,5 @@
+#!/bin/sh
+#Checks if there's a file containing the push_swap path, promts the user to enter the path if there isn't one
 if [ ! -f ps_path.txt ]
 then
 	touch ps_path.txt
@@ -8,10 +10,11 @@ else
 fi
 ps_path=${HOME}/${ps_path}
 #Prompt for user to enter the values
-read -p "enter the range (only pos. vals) (format. XX-XX): " range
-read -p "enter amount of elements: " amount
-read -p "enter tests count: " tests_count
-read -p "enter fail threshhold: " max
+printf "\n"
+read -p "Enter the range (only pos. vals) (format. XX-XX): " range
+read -p "Enter amount of elements: " amount
+read -p "Enter tests count: " tests_count
+read -p "Enter fail threshold: " max
 #Rebuild the project
 make -C "$ps_path" fclean
 make -C "$ps_path" all

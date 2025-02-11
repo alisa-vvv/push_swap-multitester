@@ -4,18 +4,26 @@ You can run any amount of tests in specified value range. The script will count 
 
 How to use:
 1. Clone the repository or download the multitester.sh to any desired path. Make sure you put it in it's own separate directory since it will generate a lot of files and folders when used.
-2. Run the script.
-  sh multitest.sh
-3. When you use the script for the first time, it will prompt you to enter the directory of your push_swap. This should be the dierctory that contains your Makefile and the checker_linux file.
-   The path you enter has to be relative to your home, for example:
-   if your push_swap directory is: /home/projects/push_swap
-   you should enter: projects/push_swap
+2. Run the script:
+    ./multitest.sh
+3. When you use the script for the first time, it will prompt you to enter the directory of your push_swap:
+    Enter push_swap path: ~/
+   The directory has to contain your Makefile and the checker_linux file. 
+   The path you enter has to be relative to your home, for example, if your push_swap directory is: 
+    /home/projects/push_swap
+   you should enter:
+    projects/push_swap
    The script will create a file called ps_path.txt in in it's directory. You can edit the file directly if you want to change the path, or just create the file yourself.
-5. You will be prompted to enter the range of values. The range has to be positive. Example range: 1-100. Note that the script will never generate copied values.
-6. You will be prompted to enter the amount of elements.
+5. You will be prompted to enter the range of values: 
+    Enter the range (only pos. vals) (format. XX-XX): 
+   The range has to be positive. Example range: 1-100. Note that the script will never generate duplicate values.
+6. You will be prompted to enter the amount of elements:
+    Enter amount of elements:
 7. You will be prompted to enter the amount of tests you want to run. Run as many as you want :)
+    Enter tests count: 
 8. Lastly, you will be prompted to enter the fail threshold. You can find those in the project pdf and the evaluation sheet.
- 
+    Enter fail threshold: 
+
 The script will then run your tests. Depending on the amount of tests and how your project is designed, this may take a while. The script will not show anything until it's finished.
 Once it's finished, you will see the results:
 
