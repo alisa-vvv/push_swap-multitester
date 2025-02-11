@@ -18,9 +18,11 @@ How to use:
 
    The directory has to contain your Makefile and the checker_linux file.\
    The path you enter has to be relative to your home, for example, if your push_swap directory is:
+   
     ```
     /home/projects/push_swap
     ```
+
    you should enter:
 ```
     projects/push_swap
