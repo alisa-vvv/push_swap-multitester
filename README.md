@@ -17,7 +17,7 @@ How to use:
 8. Lastly, you will be prompted to enter the fail threshold. You can find those in the project pdf and the evaluation sheet.
  
 The script will then run your tests. Depending on the amount of tests and how your project is designed, this may take a while. The script will not show anything until it's finished.
-Once it's finished, you will see the following:
+Once it's finished, you will see the results:
 
 Total tests run: 100
 Over the threshold: 28 cases
