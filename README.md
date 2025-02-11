@@ -1,6 +1,6 @@
 # push_swap-multitester
 A shell script that allows you to automatically generate and run a massive amount of tests for the 42 push_swap project, and check the amount of operations used.\
-You can run any amount of tests in specified value range. The script will count the operaions used for each generated input. It will display the average, minimum, and maximum amount of operations used. It will also run the linux_checker program to see of any of the inputs result in a "KO".\
+You can run any amount of tests in specified value range. The script will count and display the average, minimum, and maximum amount of operations used. It will also run the linux_checker program to see of any of the inputs result in a "KO".\
 Tests that result in a KO or use more operation than the specified threshold are saved so you can debug them.\
 \
 How to use:
