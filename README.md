@@ -49,7 +49,7 @@ The path you enter has to be relative to your home, for example, if your push_sw
 ```
    The range has to be positive. Example range: 1-100. Note that the script will never generate duplicate values.
 
-5. You will be prompted to enter the amount of elements to generate:
+5. You will be prompted to enter the amount of elements to generate for each test:
 
 ```
     Enter amount of elements:
