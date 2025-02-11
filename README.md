@@ -8,17 +8,26 @@ How to use:
 2. Run the script:
 
 ```
+    multitest.sh
+or
     ./multitest.sh
 ```
+You can specify the parameters and flags immideately, without going through prompts:
 
-3. When you use the script for the first time, it will prompt you to enter the path to the directory of your push_swap:
+```
+	./multitest.sh -[flags] [min_range-max_range] [amount_of_elemnts] [test_count] [threshold]
+	eg:
+	./multitest.sh -c 1-100 100 250 700
+```
 
+(currently, the only flag you can use is -c, which will clean previous test results)\
+\
+3. When you use the script for the first time, it will prompt you to enter the path to the directory of your push_swap. You only have to enter the path once.
 ```
     Enter push_swap path: ~/
 ```
-
-   The directory has to contain your Makefile and the checker_linux file. If you want to use your own checker, just change the name in the script itself (line 60).\
-   The path you enter has to be relative to your home, for example, if your push_swap directory is:
+The directory has to contain your Makefile and the checker_linux file. If you want to use your own checker, just change the name in the script itself (line 60).\
+The path you enter has to be relative to your home, for example, if your push_swap directory is:
 
 ```
     /home/projects/push_swap
