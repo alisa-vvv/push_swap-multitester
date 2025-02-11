@@ -9,12 +9,58 @@ else
 	ps_path=`cat ps_path.txt`
 fi
 ps_path=${HOME}/${ps_path}
-#Prompt for user to enter the values
+#Scan the flags and parameters, prompt for user to enter the values if not given
+while getopts "c" flag; do
+	case $flag in
+		c)
+			rm -rf failed_tests/*
+			rm -rf KO_tests/*
+			printf "Cleaned previous tests\n"
+		;;
+	esac
+done
+#this removes the flags from argument list
+shift $((OPTIND-1))
+if [ "$#" -ne 0 ] && [ "$#" -gt 4 ];
+then
+	printf "Incorrect input!\n"
+	exit 1
+fi
+
 printf "\n"
-read -p "Enter the range (only pos. vals) (format. XX-XX): " range
-read -p "Enter amount of elements: " amount
-read -p "Enter tests count: " tests_count
-read -p "Enter fail threshold: " max
+if [ $1 ]
+then
+	range=$1
+	printf "Inputs:\n"
+	echo "	Range: $1"
+else
+	read -p "Enter the range (only pos. vals) (format. XX-XX): " range
+fi
+
+if [ $2 ]
+then
+	amount=$2
+	echo "	Amount of elements: $2"
+else
+	read -p "Enter amount of elements: " amount
+fi
+
+if [ $3 ]
+then
+	tests_count=$3
+	echo "	Test count: $3"
+else
+	read -p "Enter tests count: " tests_count
+fi
+if [ $4 ]
+then
+	max=$4
+	echo "	Fail threshold: $4"
+	printf "\n"
+else
+	read -p "Enter fail threshold: " max
+fi
+
 #Rebuild the project
 make -C "$ps_path" fclean
 make -C "$ps_path" all
@@ -66,9 +112,10 @@ do
 	fi
 	true $((i=i+1))
 done
-echo "Total tests run: $tests_count"
-echo "Over the threshold: $over_threshold cases"
-echo "KO'd: $ko cases"
+printf "Results:\n"
+printf "	Total tests run: $tests_count\n"
+printf "	Over the threshold: $over_threshold cases\n"
+printf "	KO'd: $ko cases\n"
 #This awk script will count min, max and avg opcount across the tests
 cat multitest_out.txt | awk -v sum=0 -v min='head -n 1 multitest_out.txt' -v max=$min '
 	{
@@ -77,7 +124,7 @@ cat multitest_out.txt | awk -v sum=0 -v min='head -n 1 multitest_out.txt' -v max
 		if (max < $1 && $1 != 0) max = $1
 	}
 	END {
-		printf "Average operations used: %d\n", sum / NR
-		printf "Max operations used: %d\n", max
-		printf "Min operations used: %d\n", min
+		printf "	Average operations used: %d\n", sum / NR
+		printf "	Max operations used: %d\n", max
+		printf "	Min operations used: %d\n", min
 	}'
