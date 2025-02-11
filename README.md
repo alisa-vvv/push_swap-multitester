@@ -3,7 +3,7 @@ A shell script that allows you to automatically generate and run a massive amoun
 You can run any amount of tests in specified value range. The script will count the operaions used for each generated input. It will display the average, minimum, and maximum amount of operations used. It will also run the linux_checker program to see of any of the inputs result in a "KO".\
 \
 How to use:
-1. Clone the repository or download the multitester.sh to any desired path. Make sure you put it in it's own separate directory since it will generate a lot of files and folders when used.
+1. Clone the repository or download the multitest.sh to any desired path. Make sure you put it in it's own separate directory since it will generate a lot of files and folders when used.
 2. Run the script:
 
 ```
