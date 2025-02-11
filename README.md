@@ -16,7 +16,7 @@ How to use:
     Enter push_swap path: ~/
 ```
 
-   The directory has to contain your Makefile and the checker_linux file.\
+   The directory has to contain your Makefile and the checker_linux file. If you want to use your own checker, just change the name in the script itself (line 60).\
    The path you enter has to be relative to your home, for example, if your push_swap directory is:
 
 ```
@@ -67,8 +67,10 @@ Once it's finished, you will see the results:
 	Min operations used: 4913
 ```
 
-If any tests KO'd or were over the operation threshold you set, the input used for those tests will be saved in /KO_tests or /falied_tests respectively, so you can use them for your input.\
+If any tests KO'd or were over the operation threshold you set, the input used for those tests will be saved in KO_tests/ or falied_tests/ respectively, so you can use them for your input.\
 \
-The folders in failed_tests are named after the amount of operations your push_swap used to sort the list. Inside each folder, there are text files containing the corresponding input. Different inputs can result in the same amount of operations, so the files are named after the number of the test case that failed it.\
+The folders in failed_tests/ are named after the amount of operations your push_swap used to sort the list. Inside each folder, there are text files containing the corresponding input. Different inputs can result in the same amount of operations, so the files are named after the number of the test case that failed it.\
 \
-The folders in KO_tests are named after the number of test case that failed it. Each folder will contain the corresponding input.txt file.
+The folders in KO_tests/ are named after the number of test case that failed it. Each folder will contain the corresponding input.txt file.\
+\
+NOTE: This tester only checks operation count and the output of checker_linux program. It only generates tests that comply with project requirements. It will not check if your push_swap is properly protected against leaks, incorrect inputs, works properly with negative values, etc. In other words, this is not a Moulinette/Francinette equivalent.
