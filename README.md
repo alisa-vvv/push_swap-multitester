@@ -10,7 +10,7 @@ How to use:
     ./multitest.sh
 ```
 
-3. When you use the script for the first time, it will prompt you to enter the directory of your push_swap:
+3. When you use the script for the first time, it will prompt you to enter the path to the directory of your push_swap:
 
 ```
     Enter push_swap path: ~/
