@@ -12,7 +12,9 @@ How to use:
 or
     ./multitest.sh
 ```
-You can specify the parameters and flags immideately, without going through prompts:
+
+You can specify the parameters and flags immideately. Later steps will explain in more detail what each parameter does.\
+If you don't enter any parameters, you will be prompted by the script to enter them one-by-one.
 
 ```
 	./multitest.sh -[flags] [min_range-max_range] [amount_of_elemnts] [test_count] [threshold]
