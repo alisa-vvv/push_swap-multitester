@@ -55,7 +55,7 @@ How to use:
     Enter fail threshold:
 ```
 
-The script will then run your tests. Depending on the amount of tests and how your project is designed, this may take a while. The script will not show anything until it's finished.\
+The script will then rebuild your project using make and run the tests. Depending on the amount of tests and how fast your program is, this may take a while. You may see some messages about entering/exiting directories in the first few settings. Besides that, unless you get "Error" messages from your project or the checker, the script will not show anything until it's finished.\
 Once it's finished, you will see the results:
 
 ```
