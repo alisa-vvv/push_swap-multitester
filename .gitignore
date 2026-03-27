@@ -1,0 +1,6 @@
+failed_tests
+KO_tests
+multitest_out.txt
+ps_path.txt
+KO_tests/*
+failed_tests/*

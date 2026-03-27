@@ -3,12 +3,11 @@
 if [ ! -f ps_path.txt ]
 then
 	touch ps_path.txt
-	read -p "Enter push_swap path: ~/" ps_path
-	echo "$ps_path" > ps_path.txt
+	echo $PWD > ps_path.txt
+	ps_path=$PWD
 else
 	ps_path=`cat ps_path.txt`
 fi
-ps_path=${HOME}/${ps_path}
 #Scan the flags and parameters, prompt for user to enter the values if not given
 while getopts "c" flag; do
 	case $flag in
