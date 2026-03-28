@@ -134,10 +134,26 @@ do
 	fi
 	true $((i=i+1))
 done
-printf "Results:\n"
+
+printf "\033[93m\nResults:\033[0m\n"
 printf "	Total tests run: $tests_count\n"
+if [ $over_threshold -gt 0 ]
+then
+	printf "\033[31m"
+else
+	printf "\033[92m"
+fi
 printf "	Over the threshold: $over_threshold cases\n"
+printf "\033[0m"
+if [ $ko -gt 0 ]
+then
+	printf "\033[31m"
+else
+	printf "\033[92m"
+fi
 printf "	KO'd: $ko cases\n"
+printf "\033[0m"
+
 #This awk script will count min, max and avg opcount across the tests
 cat multitest_out.txt | awk -v sum=0 -v min='head -n 1 multitest_out.txt' -v max=$min '
 	{
