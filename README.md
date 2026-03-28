@@ -4,7 +4,7 @@ You can run any amount of tests in specified value range. The script will count 
 Tests that result in a KO or use more operation than the specified threshold are saved so you can debug them.\
 \
 How to use:
-1. Clone the repository or download the multitest.sh to any desired path. Make sure you put it in it's own separate directory since it will generate a lot of files and folders when used.
+1. Clone the repository or download the multitest.sh to any desired path. Make sure you put it in its own separate directory since it will generate a lot of files and folders when used. Make sure to grab the path to your push_swap and checke_linux executables in advance - you'll need to input those during first launch.
 2. Run the script:
 
 ```
@@ -23,25 +23,15 @@ eg:
 ```
 
 (currently, the only flag you can use is -c, which will clean previous test results)\
-\
-3. When you use the script for the first time, it will prompt you to enter the path to the directory of your push_swap. You only have to enter the path once.
-```
-    Enter push_swap path: ~/
-```
-The directory has to contain your Makefile and the checker_linux file. If you want to use your own checker, just change the name in the script itself (line 60).\
-The path you enter has to be relative to your home, for example, if your push_swap directory is:
+
+3. During first launch, the script will create some files and folders to store your tests.\
+It will prompt you to enter path to push_swap and checker_linux executables:
 
 ```
-    /home/projects/push_swap
+    Enter path to push_swap and checker_linux executables, or just press ENTER to use current path:
 ```
 
-   you should enter:
-
-```
-    projects/push_swap
-```
-
-   The script will create a file called ps_path.txt in in it's directory. You can edit the file directly if you want to change the path, or just create the file yourself.
+   The script will create a file called ps_path.txt in in its directory. You can edit the file directly if you want to change the path, or just create the file yourself. By default, it will use the current path to look for push_swap and checker_linux executables.
 
 4. You will be prompted to enter the range of values that can be generated: 
 ```

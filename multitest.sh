@@ -3,11 +3,34 @@
 if [ ! -f ps_path.txt ]
 then
 	touch ps_path.txt
-	echo $PWD > ps_path.txt
-	ps_path=$PWD
+	read -p "Enter path to push_swap and checker_linux executables, or just press ENTER to use current path: " ps_path
+	if [ -z "$ps_path" ]
+	then
+		echo "$ps_path" > ps_path.txt
+		echo $PWD > ps_path.txt
+		ps_path=$PWD
+	fi
 else
+	chmod +r+w ps_path.txt
 	ps_path=`cat ps_path.txt`
 fi
+
+# Check for push_swap and linux_checker executables
+if [ ! -f ${ps_path}/push_swap ]
+then
+	echo "push_swap executable not found"
+	exit 1
+fi
+if [ ! -f ${ps_path}/checker_linux ]
+then
+	echo "checker_linux executable not found"
+	exit 1
+fi
+
+#Change permissions for checker and push_swap executables
+chmod +x ${ps_path}/checker_linux
+chmod +x ${ps_path}/push_swap
+
 #Scan the flags and parameters, prompt for user to enter the values if not given
 while getopts "c" flag; do
 	case $flag in
@@ -60,9 +83,9 @@ else
 	read -p "Enter fail threshold: " max
 fi
 
-#Rebuild the project
-make -C "$ps_path" fclean
-make -C "$ps_path" all
+#Rebuild the project - now commented out by default. will add as a flag maybe
+#make -C "$ps_path" fclean
+#make -C "$ps_path" all
 #Check if an output file exists and creates empty one, creates dirs
 if [ -e multitest_out.txt ]
 then
